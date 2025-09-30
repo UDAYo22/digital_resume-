@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Digital Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      background: #2c3e50;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      animation: slideDown 1s ease-in-out;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background: #f39c12;
+      transition: width 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #34495e, #2c3e50);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 15px;
+      animation: bounce 3s infinite;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; }
+
+    header button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #f39c12;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.3s, background 0.3s;
+    }
+    header button:hover {
+      transform: scale(1.1);
+      background: #e67e22;
+    }
+
+    /* Sections */
+    .container {
+      width: 85%;
+      margin: 20px auto;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+    section:nth-child(1) { animation-delay: 0.3s; }
+    section:nth-child(2) { animation-delay: 0.6s; }
+    section:nth-child(3) { animation-delay: 0.9s; }
+    section:nth-child(4) { animation-delay: 1.2s; }
+    section:nth-child(5) { animation-delay: 1.5s; }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    ul { list-style: none; }
+    ul li { margin-bottom: 10px; }
+
+    /* Skills with animation bars */
+    .skill {
+      margin-bottom: 15px;
+    }
+    .skill-name { font-weight: bold; }
+    .progress {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 12px;
+    }
+    .progress-bar {
+      height: 12px;
+      background: linear-gradient(90deg, #27ae60, #2ecc71);
+      width: 0;
+      animation: fillBar 2s forwards;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+      color: white;
+      font-size: 22px;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-icons a:hover {
+      transform: rotate(15deg) scale(1.2);
+      color: #f39c12;
+    }
+
+    /* Keyframes */
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes fadeUp {
+      from {opacity:0; transform: translateY(30px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes slideDown {
+      from {transform: translateY(-100%);}
+      to {transform: translateY(0);}
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes fillBar {
+      from {width: 0;}
+      to {width: var(--bar-width);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <img src="https://via.placeholder.com/150" alt="Profile Photo">
+    <h1> uday shrivas</h1>
+    <p>📍 Location - bhopal (mp)saket nagar near university 📞 Phone - 7581016788| ✉️ Email- shrivasuday@900gmail.com</p>
+    <button>Download Resume</button>
+  </header>
+
+  <!-- Content -->
+  <div class="container">
+   
+ <section id="about">
+  <h2>About Me</h2>
+  <p>
+    Hello! My name is <strong>Uday Shrivas</strong>, a passionate learner currently 
+    pursuing <strong>Bachelor of Computer Applications (BCA)</strong> from 
+    <strong>Barkatullah University, Bhopal</strong>.  
+    I am <strong>21 years old</strong> and highly interested in technology, web 
+    development, and creative problem-solving.  
+    My goal is to grow as a skilled IT professional while continuously upgrading 
+    my knowledge and contributing to impactful projects.
+  </p>
+</section>
+
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Bachelor of computer application</strong> - barkatullah universitybhopal ( 2nd Year)</li>
+        <li><strong>12th (Maths)</strong>- st mary's convent school (2024 Year)</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill">
+        <p class="skill-name">HTML / CSS</p>
+        <div class="progress"><div class="progress-bar" style="--bar-width:90%;"></div></div>
+      </div>
+      <div class="skill">
+        <p class="skill-name">JavaScript</p>
+        <div class="progress"><div class="progress-bar" style="--bar-width:70%;"></div></div>
+      </div>
+      <div class="skill">
+    
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul>
+       
+        <li><strong>Internship</strong> -SpikiTech Private Limited </li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li> Amazon clone</li>
+        <li><strong>Content Writing </strong> - Blogs, articles, or creative works.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 uday shrivas | Digital Resume</p>
+    <div class="social-icons">
+      <a href="#">🌐</a>
+      <a href="#">🔗</a>
+      <a href="#">💼</a>
+    </div>
+  </footer>
+
+</body>
+</html>
